@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SoftActives</title>
+    <link rel="shortcut icon" href="images/softactive.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <a href="softactives.com"
+            style="display: flex; align-items: center; gap: 20px; color: #41a5e1; font-size: 28px; text-decoration: none;"><img
+                src="images/softactive.png" class="logo">
+            <h1>SoftActives</h1>
+        </a>
+        <div class="content">
+            <p>WeBsite is under maintenance!</p>
+            <div class="launch-time">
+                <div>
+                    <p class="days">00</p>
+                    <span>Days</span>
+                </div>
+                <div>
+                    <p class="hours">00</p>
+                    <span>Hours</span>
+                </div>
+                <div>
+                    <p class="minutes">00</p>
+                    <span>Minutes</span>
+                </div>
+                <div>
+                    <p class="seconds">00</p>
+                    <span>Seconds</span>
+                </div>
+            </div>
+            <h1>we're <span>launching</span> soon</h1>
+            <button onclick="window.open('https://github.com/theaamirlatif', '_blank')">learn more <img src="images/triangle.png"></button>
+        </div>
+
+        <img src="images/rocket.png" class="rocet">
+    </div>
+
+    <script>
+        const countdown = () => {
+            const countDate = new Date("mar 03, 2025 00:00:00").getTime();
+
+            const currentTime = new Date().getTime();
+            console.log(currentTime);
+            const gap = countDate - currentTime;
+
+            const millisecond = 1;
+            const second = millisecond * 1000;
+            const minutes = second * 60;
+            const hour = minutes * 60;
+            const day = hour * 24;
+
+            const textDay = Math.floor(gap / day);
+            const textHour = Math.floor((gap % day) / hour);
+            const textMinutes = Math.floor((gap % hour) / minutes);
+            const textSecond = Math.floor((gap % minutes) / second);
+            const textMillisecond = Math.floor((gap % second) / millisecond);
+
+            console.log(textHour)
+            console.log(textMillisecond)
+            document.querySelector('.days').innerText = textDay;
+            document.querySelector('.hours').innerText = textHour;
+            document.querySelector('.minutes').innerText = textMinutes;
+            document.querySelector('.seconds').innerText = textSecond;
+
+        };
+
+        setInterval(countdown, 250);
+    </script>
+
+</body>
+
+</html>
